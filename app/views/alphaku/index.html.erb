@@ -1,0 +1,40 @@
+
+<div class="jumbotron">
+    <h3>알파쿠</h3>
+    <h4>:: 만능 스도쿠 해결 알고리즘</h4>
+    <h5>해결하고 싶은 스도쿠의 모양을 아래의 칸에 적어주세요.</h5>
+</div>
+
+<h4> *빈 칸은 그대로 비워주시면 됩니다.</h4>
+
+<% if flash[:alert] %>
+<div class="alert alert-danger" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  <span class="sr-only">Error:</span>
+  <%= flash[:alert] %>
+</div>
+<% end %>
+
+<form method="post" action="/alphaku_process" >
+    <% 0.upto(2) do |x| %>
+    <div class="row">
+        <% 0.upto(2) do |y| %>
+        <div class="col-md-4 col-xs-4 tr">
+            <% 0.upto(8) do |z| %>
+            
+            <div class="col-md-4 col-xs-4 td">
+                <input type="text" class="form-control data" name=<%= "#{x}#{y}#{z}" %>>
+            </div>
+            
+            <% end %>
+        </div>
+        <% end %>
+    </div>
+    <br>
+    <% end %>
+    
+    <div>
+        <button type="submit" class="btn btn-default">분석</button>
+        <button class="btn btn-default"><a href="/" style="color: black;">리셋</a></button>
+    </div>
+</form>

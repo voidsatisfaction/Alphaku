@@ -1,0 +1,23 @@
+<div class="well">
+    <h2>알파쿠 분석 결과</h2>
+</div>
+
+<% 0.upto(2) do |x| %>
+<div class="row">
+    <% 0.upto(2) do |y| %>
+    <div class="col-md-4 col-xs-4">
+        <table class="table table-bordered">
+            <% 0.upto(2) do |z| %>
+            <tr style="height: 35px;">
+                <td <% if @inserted_place.include?([3*x+z,3*y+0]) %> class="success" <% end %> ><%= @answer[3*x+z][3*y+0] %></td>
+                <td <% if @inserted_place.include?([3*x+z,3*y+1]) %> class="success" <% end %> ><%= @answer[3*x+z][3*y+1] %></td>
+                <td <% if @inserted_place.include?([3*x+z,3*y+2]) %> class="success" <% end %> ><%= @answer[3*x+z][3*y+2] %></td>
+            </tr>
+            <% end %>
+        </table>
+    </div>
+    <% end %>
+</div>
+<% end %>
+
+<button class="btn btn-default"><a href="/" style="color: black">다시 하기</a></button>

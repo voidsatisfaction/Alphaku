@@ -1,0 +1,24 @@
+html, body {
+    min-height: 700px;
+}
+
+body {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.container {
+    max-width: 900px;
+    min-height: 700px;
+}
+
+.tr .td {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.tr .td .data {
+    min-height: 50px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
